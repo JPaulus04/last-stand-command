@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Last Stand Command — Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech+Mono&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:      #090c0d;
+    --surface: #0f1416;
+    --panel:   #131a1c;
+    --border:  #1c2629;
+    --olive:   #5c6e30;
+    --olive2:  #7d9040;
+    --amber:   #c97d20;
+    --amber2:  #e99b38;
+    --text:    #b8c4b8;
+    --muted:   #4d5f4d;
+    --white:   #dde6dd;
+    --mono:    'Share Tech Mono', monospace;
+    --display: 'Bebas Neue', sans-serif;
+    --body:    'Barlow', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.7;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.06) 3px, rgba(0,0,0,0.06) 4px);
+    pointer-events: none; z-index: 900;
+  }
+
+  header {
+    background: linear-gradient(160deg, #0d1416 0%, #090c0d 100%);
+    border-bottom: 1px solid var(--olive);
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% -10%, rgba(93,110,48,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .header-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 36px 36px 30px;
+    position: relative; z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .header-left { display: flex; align-items: center; gap: 16px; }
+
+  .shield {
+    width: 48px; height: 48px;
+    flex-shrink: 0;
+  }
+
+  .game-title {
+    font-family: var(--display);
+    font-size: 32px;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    color: var(--white);
+    text-shadow: 0 2px 30px rgba(201,125,32,0.3);
+  }
+
+  .game-sub {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .back-btn {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 10px 18px;
+    border: 1px solid var(--border);
+    transition: color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+  }
+
+  .back-btn:hover { color: var(--amber); border-color: var(--amber); }
+
+  .ticker-bar {
+    background: var(--olive);
+    border-top: 1px solid var(--olive2);
+    padding: 6px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .ticker-track {
+    display: inline-block;
+    animation: scroll-ticker 35s linear infinite;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: bold;
+    color: #0a0d0a;
+    letter-spacing: 0.15em;
+  }
+
+  @keyframes scroll-ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 64px 36px 96px;
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    display: block;
+    width: 22px; height: 1px;
+    background: var(--amber);
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-size: 52px;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .updated {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 48px;
+  }
+
+  .policy-section {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    margin-bottom: 2px;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .policy-section:nth-child(1) { animation-delay: 0.05s; }
+  .policy-section:nth-child(2) { animation-delay: 0.1s; }
+  .policy-section:nth-child(3) { animation-delay: 0.15s; }
+  .policy-section:nth-child(4) { animation-delay: 0.2s; }
+  .policy-section:nth-child(5) { animation-delay: 0.25s; }
+  .policy-section:nth-child(6) { animation-delay: 0.3s; }
+  .policy-section:nth-child(7) { animation-delay: 0.35s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .policy-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .policy-num {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--olive2);
+    letter-spacing: 0.15em;
+    flex-shrink: 0;
+  }
+
+  .policy-header h2 {
+    font-family: var(--display);
+    font-size: 24px;
+    letter-spacing: 0.06em;
+    color: var(--white);
+    margin-bottom: 0;
+  }
+
+  .policy-body {
+    padding: 22px 28px 26px 28px;
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.8;
+  }
+
+  .policy-body p + p { margin-top: 12px; }
+
+  .policy-body strong { color: var(--white); }
+
+  .policy-body a { color: var(--amber2); text-decoration: none; }
+  .policy-body a:hover { text-decoration: underline; }
+
+  .policy-body ul {
+    margin: 12px 0 12px 20px;
+    color: var(--text);
+  }
+
+  .policy-body ul li { margin-bottom: 6px; }
+
+  .contact-box {
+    background: var(--panel);
+    border: 1px solid var(--amber);
+    padding: 28px 32px;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .contact-box p {
+    font-size: 14px;
+    color: var(--text);
+  }
+
+  .contact-box strong { color: var(--white); font-size: 15px; display: block; margin-bottom: 4px; }
+
+  .btn {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 12px 26px;
+    border: 1px solid var(--amber);
+    color: var(--amber);
+    text-decoration: none;
+    background: transparent;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+
+  .btn:hover { background: var(--amber); color: #090c0d; }
+
+  footer {
+    background: var(--panel);
+    border-top: 1px solid var(--border);
+    padding: 28px 36px;
+  }
+
+  .footer-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .footer-logo {
+    font-family: var(--display);
+    font-size: 20px;
+    letter-spacing: 0.08em;
+    color: var(--white);
+    opacity: 0.5;
+  }
+
+  .footer-info {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .footer-links { display: flex; gap: 20px; }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--amber2); }
+
+  @media (max-width: 640px) {
+    .header-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+    h1 { font-size: 38px; }
+    main { padding: 48px 20px 72px; }
+    .contact-box { flex-direction: column; align-items: flex-start; }
+    .footer-inner { flex-direction: column; text-align: center; }
+    .footer-links { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-left">
+      <svg class="shield" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="35,4 64,16 64,38 35,66 6,38 6,16" fill="none" stroke="#c97d20" stroke-width="2"/>
+        <polygon points="35,10 58,20 58,37 35,60 12,37 12,20" fill="none" stroke="#5c6e30" stroke-width="1" stroke-dasharray="3,3"/>
+        <circle cx="35" cy="35" r="6" fill="none" stroke="#e99b38" stroke-width="1.5"/>
+        <circle cx="35" cy="35" r="2" fill="#e99b38"/>
+        <line x1="35" y1="26" x2="35" y2="29" stroke="#e99b38" stroke-width="1.5"/>
+        <line x1="35" y1="41" x2="35" y2="44" stroke="#e99b38" stroke-width="1.5"/>
+        <line x1="26" y1="35" x2="29" y2="35" stroke="#e99b38" stroke-width="1.5"/>
+        <line x1="41" y1="35" x2="44" y2="35" stroke="#e99b38" stroke-width="1.5"/>
+        <polyline points="6,24 6,16 14,16" stroke="#7d9040" stroke-width="1.5" fill="none"/>
+        <polyline points="56,16 64,16 64,24" stroke="#7d9040" stroke-width="1.5" fill="none"/>
+      </svg>
+      <div>
+        <div class="game-title">LAST STAND COMMAND</div>
+        <div class="game-sub">Privacy Policy</div>
+      </div>
+    </div>
+    <a class="back-btn" href="index.html">← Back to Support</a>
+  </div>
+</header>
+
+<div class="ticker-bar">
+  <div class="ticker-track">
+    ⬥&nbsp; LAST STAND COMMAND — PRIVACY POLICY &nbsp;⬥&nbsp; YOUR DATA IS YOURS &nbsp;⬥&nbsp; WE DO NOT SELL YOUR INFORMATION &nbsp;⬥&nbsp; iOS APP STORE &nbsp;⬥&nbsp; LAST STAND COMMAND — PRIVACY POLICY &nbsp;⬥&nbsp; YOUR DATA IS YOURS &nbsp;⬥&nbsp; WE DO NOT SELL YOUR INFORMATION &nbsp;⬥&nbsp; iOS APP STORE &nbsp;⬥&nbsp;
+  </div>
+</div>
+
+<main>
+
+  <div class="eyebrow">Legal Document</div>
+  <h1>Privacy Policy</h1>
+  <div class="updated">Last Updated: March 2026 &nbsp;|&nbsp; Effective Immediately</div>
+
+  <div class="policy-section">
+    <div class="policy-header">
+      <span class="policy-num">01 //</span>
+      <h2>Overview</h2>
+    </div>
+    <div class="policy-body">
+      <p>This Privacy Policy explains how Last Stand Command ("we", "us", or "our") handles information when you play our iOS game. We are committed to protecting your privacy and being transparent about our practices.</p>
+      <p>By downloading and playing Last Stand Command, you agree to the practices described in this policy.</p>
+    </div>
+  </div>
+
+  <div class="policy-section">
+    <div class="policy-header">
+      <span class="policy-num">02 //</span>
+      <h2>Information We Collect</h2>
+    </div>
+    <div class="policy-body">
+      <p>We collect only the minimal data necessary to operate and improve the game:</p>
+      <ul>
+        <li><strong>Anonymous gameplay data</strong> — level progress, session length, in-game actions</li>
+        <li><strong>Device information</strong> — device model, iOS version, language settings</li>
+        <li><strong>Crash reports</strong> — anonymous logs to help us diagnose and fix bugs</li>
+      </ul>
+      <p>We do <strong>not</strong> collect your name, email address, phone number, location, or any other personally identifiable information through the game itself.</p>
+    </div>
+  </div>
+
+  <div class="policy-section">
+    <div class="policy-header">
+      <span class="policy-num">03 //</span>
+      <h2>In-App Purchases</h2>
+    </div>
+    <div class="policy-body">
+      <p>All purchases within Last Stand Command are processed entirely by Apple through the App Store. We do not collect, store, or have access to your payment information, credit card details, or billing address at any time.</p>
+      <p>For questions about billing or refunds, please visit <a href="https://reportaproblem.apple.com" target="_blank">reportaproblem.apple.com</a>.</p>
+    </div>
+  </div>
+
+  <div class="policy-section">
+    <div class="policy-header">
+      <span class="policy-num">04 //</span>
+      <h2>Third-Party Services</h2>
+    </div>
+    <div class="policy-body">
+      <p>Last Stand Command may use the following Apple services, each governed by Apple's own Privacy Policy:</p>
+      <ul>
+        <li><strong>Apple GameCenter</strong> — for leaderboards and achievements</li>
+        <li><strong>iCloud</strong> — for optional game progress sync across your devices</li>
+        <li><strong>App Store</strong> — for all purchase processing</li>
+      </ul>
+      <p>We do not use third-party advertising networks or sell your data to any third parties.</p>
+    </div>
+  </div>
+
+  <div class="policy-section">
+    <div class="policy-header">
+      <span class="policy-num">05 //</span>
+      <h2>Data Retention & Deletion</h2>
+    </div>
+    <div class="policy-body">
+      <p>Anonymous analytics data is retained for a maximum of 12 months, after which it is automatically deleted.</p>
+      <p>You may request deletion of any data associated with your game account at any time by contacting us through our <a href="https://tally.so/r/eqLrR0" target="_blank">support form</a>. We will process all deletion requests within 30 days.</p>
+    </div>
+  </div>
+
+  <div class="policy-section">
+    <div class="policy-header">
+      <span class="policy-num">06 //</span>
+      <h2>Children's Privacy</h2>
+    </div>
+    <div class="policy-body">
+      <p>Last Stand Command is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13.</p>
+      <p>If you believe a child under 13 has provided us with personal information, please contact us immediately via our <a href="https://tally.so/r/eqLrR0" target="_blank">support form</a> and we will take steps to delete that information promptly.</p>
+    </div>
+  </div>
+
+  <div class="policy-section">
+    <div class="policy-header">
+      <span class="policy-num">07 //</span>
+      <h2>Changes to This Policy</h2>
+    </div>
+    <div class="policy-body">
+      <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last Updated" date at the top of this page. We encourage you to review this policy periodically.</p>
+      <p>Continued use of Last Stand Command after any changes constitutes your acceptance of the updated policy.</p>
+    </div>
+  </div>
+
+  <div class="contact-box">
+    <div>
+      <strong>Questions about this policy?</strong>
+      <p>Contact our support team and we'll respond within 24 hours.</p>
+    </div>
+    <a class="btn" href="https://tally.so/r/eqLrR0" target="_blank">Contact Us →</a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">LSC</div>
+    <div class="footer-info">© 2026 Last Stand Command &nbsp;|&nbsp; All Rights Reserved</div>
+    <div class="footer-links">
+      <a href="index.html">Support</a>
+      <a href="https://reportaproblem.apple.com" target="_blank">Refunds</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
