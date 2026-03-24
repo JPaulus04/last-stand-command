@@ -60,4 +60,725 @@
     inset: 0;
     background:
       radial-gradient(ellipse 60% 80% at 50% -10%, rgba(93,110,48,0.12) 0%, transparent 70%),
-      repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(255,255,255,0.01) 80px, rgba(255,255,255,0​​​​​​​​​​​​​​​​
+      repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(255,255,255,0.01) 80px, rgba(255,255,255,0.01) 81px),
+      repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(255,255,255,0.01) 80px, rgba(255,255,255,0.01) 81px);
+    pointer-events: none;
+  }
+
+  .header-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 40px 36px 34px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 24px;
+    position: relative; z-index: 1;
+  }
+
+  .h-left {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--olive2);
+    text-transform: uppercase;
+    line-height: 2;
+  }
+
+  .h-left strong { color: var(--amber); display: block; font-size: 11px; }
+
+  .logo-center { text-align: center; }
+
+  .shield {
+    width: 70px; height: 70px;
+    margin: 0 auto 14px;
+    display: block;
+  }
+
+  .game-title {
+    font-family: var(--display);
+    font-size: 58px;
+    letter-spacing: 0.05em;
+    line-height: 0.95;
+    color: var(--white);
+    text-shadow: 0 2px 40px rgba(201,125,32,0.35), 0 0 80px rgba(201,125,32,0.1);
+  }
+
+  .game-sub {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+
+  .h-right {
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    line-height: 2.1;
+    text-transform: uppercase;
+  }
+
+  .online { color: #5cb85c; }
+  .online::before {
+    content: '';
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #5cb85c;
+    margin-right: 6px;
+    box-shadow: 0 0 6px #5cb85c;
+    animation: blink 2.5s infinite;
+    vertical-align: middle;
+  }
+
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  .ticker-bar {
+    background: var(--olive);
+    border-top: 1px solid var(--olive2);
+    padding: 6px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .ticker-track {
+    display: inline-block;
+    animation: scroll-ticker 35s linear infinite;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: bold;
+    color: #0a0d0a;
+    letter-spacing: 0.15em;
+  }
+
+  @keyframes scroll-ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  nav {
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 200;
+  }
+
+  .nav-wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 36px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  nav a {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 15px 22px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    display: block;
+  }
+
+  nav a:hover, nav a.active {
+    color: var(--amber2);
+    border-bottom-color: var(--amber2);
+  }
+
+  .nav-divider {
+    width: 1px; height: 16px;
+    background: var(--border);
+    margin: 0 4px;
+  }
+
+  main {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 64px 36px 96px;
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    display: block;
+    width: 22px; height: 1px;
+    background: var(--amber);
+  }
+
+  h2 {
+    font-family: var(--display);
+    font-size: 46px;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 36px;
+  }
+
+  .section { margin-bottom: 88px; animation: fadeUp 0.5s ease both; }
+  .section:nth-child(2) { animation-delay: 0.05s; }
+  .section:nth-child(3) { animation-delay: 0.1s; }
+  .section:nth-child(4) { animation-delay: 0.15s; }
+  .section:nth-child(5) { animation-delay: 0.2s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .quick-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .quick-card {
+    background: var(--surface);
+    padding: 30px 24px 28px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .quick-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--amber);
+    transform: scaleX(0);
+    transition: transform 0.25s;
+  }
+
+  .quick-card:hover { background: #141c1f; }
+  .quick-card:hover::after { transform: scaleX(1); }
+
+  .qc-icon { font-size: 32px; margin-bottom: 12px; display: block; }
+
+  .qc-label {
+    font-family: var(--display);
+    font-size: 20px;
+    letter-spacing: 0.07em;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .qc-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .faq-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+
+  details {
+    background: var(--surface);
+    transition: background 0.2s;
+  }
+
+  details[open] { background: #141c1f; }
+
+  summary {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 22px 26px;
+    cursor: pointer;
+    list-style: none;
+    font-size: 15px;
+    color: var(--white);
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  summary::-webkit-details-marker { display: none; }
+  summary:hover { color: var(--amber2); }
+
+  .faq-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--olive2);
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+    margin-top: 2px;
+    width: 32px;
+  }
+
+  .faq-chevron {
+    margin-left: auto;
+    flex-shrink: 0;
+    font-size: 14px;
+    color: var(--muted);
+    transition: transform 0.25s;
+    margin-top: 2px;
+  }
+
+  details[open] .faq-chevron { transform: rotate(90deg); color: var(--amber); }
+
+  .faq-body {
+    padding: 0 26px 22px 74px;
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.75;
+  }
+
+  .status-board {
+    background: var(--surface);
+    border: 1px solid var(--border);
+  }
+
+  .status-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .status-title {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber2);
+  }
+
+  .all-clear {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: #5cb85c;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .status-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .status-row:last-child { border-bottom: none; }
+
+  .status-name { font-size: 14px; color: var(--text); }
+
+  .status-since {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  .badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border: 1px solid;
+  }
+
+  .badge-ok { color: #5cb85c; border-color: #5cb85c; }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 36px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+
+  .contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--amber);
+  }
+
+  .contact-card:hover { border-color: var(--amber); }
+
+  .cc-icon { font-size: 28px; margin-bottom: 14px; display: block; }
+
+  .contact-card h3 {
+    font-family: var(--display);
+    font-size: 28px;
+    letter-spacing: 0.06em;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .contact-card p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 24px;
+    line-height: 1.65;
+  }
+
+  .btn {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 12px 26px;
+    border: 1px solid var(--amber);
+    color: var(--amber);
+    text-decoration: none;
+    cursor: pointer;
+    background: transparent;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn:hover { background: var(--amber); color: #090c0d; }
+
+  .btn-solid {
+    background: var(--amber);
+    color: #090c0d;
+    font-weight: 600;
+  }
+
+  .btn-solid:hover { background: var(--amber2); border-color: var(--amber2); }
+
+  .legal-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 36px 40px;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  .legal-box h3 {
+    font-family: var(--display);
+    font-size: 24px;
+    letter-spacing: 0.06em;
+    color: var(--white);
+    margin-bottom: 14px;
+  }
+
+  .legal-box a { color: var(--amber2); text-decoration: none; }
+  .legal-box a:hover { text-decoration: underline; }
+
+  footer {
+    background: var(--panel);
+    border-top: 1px solid var(--border);
+    padding: 32px 36px;
+  }
+
+  .footer-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .footer-logo {
+    font-family: var(--display);
+    font-size: 22px;
+    letter-spacing: 0.08em;
+    color: var(--white);
+    opacity: 0.6;
+  }
+
+  .footer-info {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-align: center;
+    line-height: 2;
+    text-transform: uppercase;
+  }
+
+  .footer-links { display: flex; gap: 24px; }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--amber2); }
+
+  @media (max-width: 820px) {
+    .header-inner { grid-template-columns: 1fr; text-align: center; gap: 12px; }
+    .h-left, .h-right { text-align: center; }
+    .game-title { font-size: 42px; }
+    .quick-grid { grid-template-columns: 1fr 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-inner { flex-direction: column; text-align: center; }
+    .footer-links { justify-content: center; }
+    h2 { font-size: 36px; }
+    main { padding: 48px 20px 72px; }
+  }
+
+  @media (max-width: 520px) {
+    .quick-grid { grid-template-columns: 1fr; }
+    .status-row { grid-template-columns: 1fr auto; }
+    .status-since { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="h-left">
+      <strong>LSC Support Command</strong>
+      PLATFORM: IOS &nbsp;|&nbsp; VERSION: 1.0<br>
+      REGION: WORLDWIDE
+    </div>
+    <div class="logo-center">
+      <svg class="shield" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="35,4 64,16 64,38 35,66 6,38 6,16" fill="none" stroke="#c97d20" stroke-width="2"/>
+        <polygon points="35,10 58,20 58,37 35,60 12,37 12,20" fill="none" stroke="#5c6e30" stroke-width="1" stroke-dasharray="3,3"/>
+        <line x1="35" y1="10" x2="35" y2="60" stroke="#c97d20" stroke-width="1" opacity="0.4"/>
+        <line x1="12" y1="28" x2="58" y2="28" stroke="#c97d20" stroke-width="1" opacity="0.4"/>
+        <circle cx="35" cy="35" r="6" fill="none" stroke="#e99b38" stroke-width="1.5"/>
+        <circle cx="35" cy="35" r="2" fill="#e99b38"/>
+        <line x1="35" y1="26" x2="35" y2="29" stroke="#e99b38" stroke-width="1.5"/>
+        <line x1="35" y1="41" x2="35" y2="44" stroke="#e99b38" stroke-width="1.5"/>
+        <line x1="26" y1="35" x2="29" y2="35" stroke="#e99b38" stroke-width="1.5"/>
+        <line x1="41" y1="35" x2="44" y2="35" stroke="#e99b38" stroke-width="1.5"/>
+        <polyline points="6,24 6,16 14,16" stroke="#7d9040" stroke-width="1.5" fill="none"/>
+        <polyline points="56,16 64,16 64,24" stroke="#7d9040" stroke-width="1.5" fill="none"/>
+        <polyline points="6,38 6,46" stroke="#7d9040" stroke-width="1.5" fill="none"/>
+        <polyline points="64,38 64,46" stroke="#7d9040" stroke-width="1.5" fill="none"/>
+      </svg>
+      <div class="game-title">LAST STAND<br>COMMAND</div>
+      <div class="game-sub">Support Operations</div>
+    </div>
+    <div class="h-right">
+      <span class="online">Systems Online</span><br>
+      Response Time: &lt; 24 hrs<br>
+      iOS Support Active<br>
+      App Store Listed
+    </div>
+  </div>
+</header>
+
+<div class="ticker-bar">
+  <div class="ticker-track">
+    ⬥&nbsp; WELCOME TO LAST STAND COMMAND SUPPORT &nbsp;⬥&nbsp; ALL SYSTEMS OPERATIONAL &nbsp;⬥&nbsp; RESPONSE TIME UNDER 24 HOURS &nbsp;⬥&nbsp; AVAILABLE ON THE IOS APP STORE &nbsp;⬥&nbsp; THANK YOU FOR PLAYING &nbsp;⬥&nbsp; WELCOME TO LAST STAND COMMAND SUPPORT &nbsp;⬥&nbsp; ALL SYSTEMS OPERATIONAL &nbsp;⬥&nbsp; RESPONSE TIME UNDER 24 HOURS &nbsp;⬥&nbsp; AVAILABLE ON THE IOS APP STORE &nbsp;⬥&nbsp; THANK YOU FOR PLAYING &nbsp;⬥&nbsp;
+  </div>
+</div>
+
+<nav>
+  <div class="nav-wrap">
+    <a href="#quick-help" class="active">Quick Help</a>
+    <div class="nav-divider"></div>
+    <a href="#faq">FAQ</a>
+    <div class="nav-divider"></div>
+    <a href="#status">System Status</a>
+    <div class="nav-divider"></div>
+    <a href="#contact">Contact</a>
+    <div class="nav-divider"></div>
+    <a href="#privacy">Privacy</a>
+  </div>
+</nav>
+
+<main>
+
+  <section class="section" id="quick-help">
+    <div class="eyebrow">Mission Briefing</div>
+    <h2>How Can We Help?</h2>
+    <div class="quick-grid">
+      <a class="quick-card" href="#faq">
+        <span class="qc-icon">📖</span>
+        <div class="qc-label">FAQ</div>
+        <div class="qc-desc">Common questions about gameplay, purchases & accounts</div>
+      </a>
+      <a class="quick-card" href="#contact">
+        <span class="qc-icon">📡</span>
+        <div class="qc-label">Contact Us</div>
+        <div class="qc-desc">Reach our support team directly by email</div>
+      </a>
+      <a class="quick-card" href="#status">
+        <span class="qc-icon">🛰️</span>
+        <div class="qc-label">System Status</div>
+        <div class="qc-desc">Check for known issues and ongoing investigations</div>
+      </a>
+      <a class="quick-card" href="https://support.apple.com/billing" target="_blank">
+        <span class="qc-icon">💳</span>
+        <div class="qc-label">Billing</div>
+        <div class="qc-desc">All purchases are handled securely via Apple's App Store</div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="eyebrow">Intelligence Files</div>
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+
+      <details open>
+        <summary><span class="faq-num">01</span>How do I restore my purchases after reinstalling the game?<span class="faq-chevron">›</span></summary>
+        <div class="faq-body">Open Last Stand Command and navigate to Settings → Store. Tap <strong>Restore Purchases</strong>. Make sure you are signed in to the same Apple ID used for the original purchase. Your items should restore within a few seconds. If they don't appear, force-close the app, reopen it, and try again.</div>
+      </details>
+
+      <details>
+        <summary><span class="faq-num">02</span>The game crashes on launch — what should I do?<span class="faq-chevron">›</span></summary>
+        <div class="faq-body">First, make sure you're running the latest version of Last Stand Command from the App Store. Fully close the app and relaunch. If the problem persists, try restarting your device. If crashes continue, please contact us with your device model and iOS version.</div>
+      </details>
+
+      <details>
+        <summary><span class="faq-num">03</span>I was charged but didn't receive my in-app purchase. What now?<span class="faq-chevron">›</span></summary>
+        <div class="faq-body">First, use the Restore Purchases option in Settings → Store. All transactions go through Apple — if the issue persists, please report it at <strong>reportaproblem.apple.com</strong> with your order ID. You can also contact us and we'll help resolve it.</div>
+      </details>
+
+      <details>
+        <summary><span class="faq-num">04</span>My progress was lost. Can it be recovered?<span class="faq-chevron">›</span></summary>
+        <div class="faq-body">If you had iCloud sync enabled, your progress may be stored in the cloud — sign in with the same Apple ID and re-enable iCloud in the game settings. If iCloud was not enabled, progress stored locally may not be recoverable after an uninstall. We strongly recommend enabling iCloud backup going forward.</div>
+      </details>
+
+      <details>
+        <summary><span class="faq-num">05</span>How do I turn off notifications?<span class="faq-chevron">›</span></summary>
+        <div class="faq-body">Go to your device's <strong>Settings → Notifications → Last Stand Command</strong> and toggle off Allow Notifications. You can also manage notification preferences from within the game's Settings menu.</div>
+      </details>
+
+      <details>
+        <summary><span class="faq-num">06</span>Is an internet connection required to play?<span class="faq-chevron">›</span></summary>
+        <div class="faq-body">Last Stand Command supports offline play for most modes. An internet connection is required for leaderboard updates, cloud saving, and online features. Some content may be temporarily unavailable without a connection.</div>
+      </details>
+
+      <details>
+        <summary><span class="faq-num">07</span>Does the game collect personal data?<span class="faq-chevron">›</span></summary>
+        <div class="faq-body">We collect only minimal data needed to operate the game (such as anonymous crash reports and game progress). We do not sell your data to third parties. Please see our Privacy Policy below for full details.</div>
+      </details>
+
+      <details>
+        <summary><span class="faq-num">08</span>How do I request a refund?<span class="faq-chevron">›</span></summary>
+        <div class="faq-body">All refund requests must go through Apple. Visit <strong>reportaproblem.apple.com</strong>, sign in with your Apple ID, find the transaction, and select "Request a Refund." Apple will review and respond within a few days.</div>
+      </details>
+
+    </div>
+  </section>
+
+  <section class="section" id="status">
+    <div class="eyebrow">Operational Status</div>
+    <h2>System Status</h2>
+    <div class="status-board">
+      <div class="status-header">
+        <span class="status-title">// Live Status Board</span>
+        <span class="all-clear">● All Core Systems Operational</span>
+      </div>
+      <div class="status-row"><span class="status-name">Game Servers</span><span class="status-since">Updated today</span><span class="badge badge-ok">Operational</span></div>
+      <div class="status-row"><span class="status-name">In-App Purchases</span><span class="status-since">Updated today</span><span class="badge badge-ok">Operational</span></div>
+      <div class="status-row"><span class="status-name">iCloud Save Sync</span><span class="status-since">Updated today</span><span class="badge badge-ok">Operational</span></div>
+      <div class="status-row"><span class="status-name">Leaderboards</span><span class="status-since">Updated today</span><span class="badge badge-ok">Operational</span></div>
+      <div class="status-row"><span class="status-name">Push Notifications</span><span class="status-since">Updated today</span><span class="badge badge-ok">Operational</span></div>
+      <div class="status-row"><span class="status-name">Support Response Queue</span><span class="status-since">Updated today</span><span class="badge badge-ok">Operational</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="eyebrow">Direct Line</div>
+    <h2>Contact Support</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <span class="cc-icon">✉️</span>
+        <h3>Email Support</h3>
+        <p>Our team responds to all inquiries within 24 hours. Please include your device model, iOS version, and a description of the issue for the fastest resolution.</p>
+        <a class="btn btn-solid" href="mailto:support@yourdomain.com">Send a Message</a>
+      </div>
+      <div class="contact-card">
+        <span class="cc-icon">🍎</span>
+        <h3>App Store Support</h3>
+        <p>For billing disputes, refund requests, or account issues, Apple's support team can assist directly. All purchases are processed through the App Store.</p>
+        <a class="btn" href="https://reportaproblem.apple.com" target="_blank">Apple Support →</a>
+      </div>
+    </div>
+    <div style="margin-top:20px; background:var(--surface); border:1px solid var(--border); padding:20px 24px;">
+      <p style="font-family:var(--mono); font-size:12px; color:var(--muted); letter-spacing:0.1em;">
+        ⚑ &nbsp; When contacting support, please include: <strong style="color:var(--text);">your device model</strong>, <strong style="color:var(--text);">iOS version</strong>, <strong style="color:var(--text);">app version</strong>, and a brief description of the issue.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="privacy">
+    <div class="eyebrow">Legal & Privacy</div>
+    <h2>Privacy Policy</h2>
+    <div class="legal-box">
+      <h3>Your Privacy Matters</h3>
+      <p><em>Last updated: 2025</em></p><br>
+      <p><strong style="color:var(--text);">Information We Collect</strong><br>Last Stand Command collects anonymous gameplay data (level progress, session length) and device information (model, OS version) solely for improving the game and diagnosing crashes. We do not collect names, email addresses, or personally identifiable information through the game.</p><br>
+      <p><strong style="color:var(--text);">In-App Purchases</strong><br>All purchases are processed by Apple through the App Store. We do not store or have access to your payment information.</p><br>
+      <p><strong style="color:var(--text);">Third-Party Services</strong><br>We may use Apple's GameCenter and iCloud services for leaderboards and cloud saves. Their respective privacy policies apply to those services.</p><br>
+      <p><strong style="color:var(--text);">Data Retention & Deletion</strong><br>Anonymous analytics data is retained for up to 12 months. You may request deletion of any data by contacting us at <a href="mailto:support@yourdomain.com">support@yourdomain.com</a>.</p><br>
+      <p><strong style="color:var(--text);">Children's Privacy</strong><br>This game is not directed at children under 13. We do not knowingly collect personal information from children.</p><br>
+      <p><strong style="color:var(--text);">Contact</strong><br>For privacy-related questions, email us at <a href="mailto:support@yourdomain.com">support@yourdomain.com</a>.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">LSC</div>
+    <div class="footer-info">
+      © 2025 Last Stand Command &nbsp;|&nbsp; All Rights Reserved<br>
+      Available on the iOS App Store &nbsp;|&nbsp; Made for mobile commanders
+    </div>
+    <div class="footer-links">
+      <a href="#privacy">Privacy</a>
+      <a href="#contact">Contact</a>
+      <a href="https://reportaproblem.apple.com" target="_blank">Refunds</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
